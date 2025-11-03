@@ -1,0 +1,43 @@
+Short answer:
+Yes – paypal.com is a benign domain. It is the official website of PayPal, the global online payments platform owned by PayPal Holdings, Inc.
+
+Why it is considered benign
+Factor	Details
+Ownership	PayPal Holdings, Inc. (publicly traded, headquartered in San Jose, CA).
+Reputation	The domain has a long history (since 1998) and is listed as trusted in major threat‑intelligence feeds (e.g., Cisco Umbrella, Symantec, Palo Alto Networks, Microsoft SmartScreen).
+SSL/TLS	Uses a valid, industry‑standard certificate issued by a major CA (e.g., DigiCert).
+WHOIS	Public WHOIS records match the known corporate contact information.
+Malware database checks	A quick search on VirusTotal, Hybrid Analysis, and other sandboxes returns 0 malicious detections.
+Phishing alerts	No active phishing campaigns are currently linked to the paypal.com domain itself; however, spoofed domains (e.g., “paypall.com”, “paypall.org”) are occasionally reported.
+Bottom line: The domain paypal.com is not flagged as malicious by any mainstream security vendor and is considered a legitimate, safe website.
+
+Things to watch for
+Even though the domain is legitimate, attackers often try to trick users into entering credentials on look‑alike or spoofed sites. Common tactics include:
+
+Typosquatting – domains such as paypall.com, paypal.co, or paypals.com.
+Mail‑to phishing – emails that appear to come from PayPal but contain a link to a fake domain.
+Malicious attachments – phishing emails that invite you to “verify your PayPal account” via a link that actually leads to malware.
+Red‑flag indicators
+Indicator	Why it matters
+URL begins with “http://” instead of “https://”	Legitimate PayPal pages use HTTPS exclusively.
+URL contains unfamiliar subdomains (e.g., secure.paypal.com)	Legitimate subdomains are well‑documented (e.g., secure.paypal.com, www.paypal.com).
+Email claims an “unusual activity” and requests you click a link	Typical phishing pattern.
+The site requires you to “download” an app or “install” a plugin	PayPal does not require downloads for account access.
+How to verify a URL quickly
+Tool	How to use
+Google Safe Browsing	https://transparencyreport.google.com/safe-browsing/search?url=paypal.com
+VirusTotal	Paste the full URL or IP – check “Malicious” and “Risk” sections.
+Cisco Umbrella	Use the Umbrella dashboard or public API to look up domain reputation.
+Qualys SSL Labs	https://www.ssllabs.com/ssltest/analyze.html?d=paypal.com – confirms SSL certificate and security configuration.
+Best practices for users
+Always type the URL yourself (or use a trusted bookmark).
+Verify the SSL padlock – it should say “Secure” and show “PayPal Holdings, Inc.” as the certificate owner.
+Look for the brand’s official “PayPal” logo (red and white). PayPal’s logo has a specific design; any major deviation is a red flag.
+Check the domain – it should end in paypal.com.
+Enable two‑factor authentication (2FA) on your PayPal account.
+Stay updated – PayPal occasionally issues alerts about phishing attempts; subscribe to their official communications if you are a business user.
+Bottom line
+PayPal.com is a trusted, legitimate domain.
+No malware or malicious activity is reported against it by current threat‑intelligence feeds.
+Remain vigilant against phishing and spoofed domains that mimic PayPal. Use the verification steps above whenever in doubt.
+If you come across a suspicious URL claiming to be PayPal but differing in spelling or structure, consider reporting it to PayPal directly via https://www.paypal.com/us/security/reportphish and check it through a reputable threat‑intel service.

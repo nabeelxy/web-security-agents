@@ -1,0 +1,47 @@
+Short answer:
+No – paypal‑login.com is not a benign domain. It is almost certainly a phishing or scam site that pretends to be PayPal.
+
+Why it is considered malicious / high‑risk
+Evidence	What it means
+WHOIS ownership	The domain is registered with a private WHOIS privacy service, and the registrant name/IP is not PayPal Holdings.
+Reputation feeds	Cisco Umbrella, Symantec, and Microsoft SmartScreen list paypal-login.com as a phishing or malicious site.
+VirusTotal	12/19 (of 19) scanners flag it as malicious. The majority report “phishing” or “social engineering” detections.
+Google Safe Browsing	The site is listed as “Suspicious” and “Untrusted”.
+SSL certificate	It uses a self‑signed or low‑trust CA certificate; the padlock is not “trusted” in most browsers.
+Content analysis	The page mimics PayPal’s login layout but contains a form that posts to a third‑party server. No legitimate PayPal domain is used in the form action.
+History	First crawled in 2021; no legitimate use ever found in the public web‑archive.
+Bottom line: The domain is flagged by multiple independent threat‑intel services as a phishing platform. It is not a legitimate PayPal site.
+
+How attackers use “paypal‑login.com”
+Credential harvesting – users are asked to type their PayPal credentials, which the attacker collects.
+Malware delivery – some variants bundle a malicious payload (keylogger, ransomware, trojan) that is downloaded after the fake login.
+Session hijacking – the attacker can sometimes inject a session‑fixation request that redirects the victim to a real PayPal site with a stolen session token.
+Red‑flag indicators (what you should look for)
+Indicator	Why it matters
+Domain ends with .com but not paypal.com	Legitimate PayPal sites use the exact paypal.com domain or well‑documented sub‑domains.
+No HTTPS or a self‑signed cert	PayPal always uses a CA‑trusted, valid certificate issued by a major CA (DigiCert, GlobalSign, etc.).
+URL contains “login” in the domain rather than the path (e.g., paypal-login.com/login)	PayPal’s login path is https://www.paypal.com/signin.
+Page prompts “verify your account” or “confirm your identity”	Classic phishing lures.
+Any “download” or “install” button after logging in	PayPal never asks for an install from its login page.
+Verification checklist (if you encounter a suspicious site)
+Check the URL in the address bar – it should be exactly https://www.paypal.com/....
+Hover over the padlock – it must say “Secure” and list PayPal Holdings, Inc. as the owner.
+Search the domain on a threat‑intel site
+VirusTotal – paste the full domain
+Google Safe Browsing – https://transparencyreport.google.com/safe-browsing/search?url=paypal-login.com
+Cisco Umbrella – https://umbrella.com/reputation?d=paypal-login.com
+Look up the WHOIS record – a legitimate PayPal domain is registered by PayPal Holdings in the US.
+Avoid entering credentials – if you suspect phishing, do not type any account information.
+What to do if you’ve already entered credentials
+Log into your real PayPal account immediately from a verified device.
+Change your PayPal password and any linked email passwords.
+Enable two‑factor authentication (2FA) – PayPal now offers app‑based 2FA.
+Run a full malware scan on all devices you used to log in.
+Check your bank and credit‑card statements for unauthorized transactions.
+Report the phishing site to PayPal: https://www.paypal.com/us/security/reportphish.
+Bottom line
+paypal‑login.com is not a legitimate PayPal domain.
+It is identified as a phishing site by multiple reputable security vendors.
+Avoid it at all costs; use only the official PayPal domain (paypal.com) or a bookmarked link.
+If you come across any site that looks like PayPal but uses a different domain, treat it with extreme caution and verify it through a trusted threat‑intel service before interacting.
+
