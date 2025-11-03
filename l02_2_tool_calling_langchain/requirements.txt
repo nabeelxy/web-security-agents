@@ -1,0 +1,3 @@
+langchain
+langchain-google-vertexai
+python-whois
