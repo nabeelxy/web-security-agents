@@ -5,6 +5,11 @@ then use adk web.
 ## Getting the API key
 In order to use Google ADK, we need an API key. Go to aistudio.google.com and create your key.
 
+System:
+python3 -m venv ./wsa_env
+source ./wsa_env/bin/activate
+pip install -r requirements.txt
+
 Copy the following to .env file:
 GOOGLE_GENAI_USE_VERTEXAI=0
 GOOGLE_API_KEY=<your-api-key>
