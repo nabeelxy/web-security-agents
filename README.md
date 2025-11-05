@@ -15,17 +15,27 @@ git push -uf origin main
 - A basic agent using ADK
 - A basic agent using LangChain
 - A basic agent using ollama
+- A basic agent using ADK but can run standalone without adk web
 
 ## Agents with Tools
-
+- Built-in tool calling with ADK
+- Custom tool calling with ADK
+- Custom tool calling with LangChain
 
 ## Agents with MCP Servers
-
+- A basic MCP server with stdio transport
+- A basic MCP server with http transport
+- A MCP server for VT APIs (threat intelligence)
+- A MCP server for UrlScan APIs (web page crawling)
 
 ## Agents with RAG
-
+- Threat intelligence RAG agent
 
 ## Multi-Agents
+- Sequential agent
+- Parallel agent
+- Loop agent
 
 
 ## Web Security Agent
+- A ReAct Agent (i.e. an Agent in a Loop iteratively using tools) to investigate websites
