@@ -1,6 +1,13 @@
 # First Basic Agent
-The goal is to create a very simple agent using Google ADK and
-then use adk web.
+The goal is to create a very simple agent using Google ADK and then use adk web.
+
+There are in fact 4 ways to run an agent:
+- CLI (adk run)
+- Web UI (adk web)
+- API Server (adk api_server)
+- API (Python)
+
+For initial development adk web is an excellent environment as it provides session memory and tracing out of the box. Once you have validated your implementation, you may want to use the API to make it hands off.
 
 ## Getting the API key
 In order to use Google ADK with your personal account, we need an API key. Go to aistudio.google.com and create your key.
