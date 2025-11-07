@@ -1,5 +1,6 @@
 # Web Security Agents
 
+This repo is for people in a hurry to get to know how to use LLM agents (mainly through Google ADK) to automate web security investigation. It walks you through key concepts of in-context learning, tool calling, MCP, RAG, Multi-Agents and ReAct Agent planning using easy to run code snippets.
 
 
 ## Getting started
