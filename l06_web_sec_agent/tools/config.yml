@@ -1,0 +1,5 @@
+tranco_filename: "../../kb/tranco.csv"
+crunchbase_filename: "../../kb/crunchbase.csv"
+public_filename: "../../kb/public.csv"
+malip_filename: "../../kb/mal_ips.csv"
+malip_cdn_filename: "../../kb/mal_ips_cdn.csv"

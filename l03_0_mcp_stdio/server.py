@@ -1,5 +1,4 @@
 from mcp.server.fastmcp import FastMCP
-import whois
 import json
 from whois_util import get_domain_whois_v2
 

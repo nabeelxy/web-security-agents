@@ -16,7 +16,7 @@ toolset_urlscan = MCPToolset(
 
 root_agent = LlmAgent(
     name="agent_03_mcp_urlscan",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-pro",
     description="""
         Web security analyst. 
         """,

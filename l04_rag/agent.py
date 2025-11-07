@@ -6,7 +6,7 @@ import json
 import os
 
 def get_embedding(text):
-    client = genai.Client(api_key=os.environ.get('GOOGLE_API_KEY'))
+    client = genai.Client()#api_key=os.environ.get('GOOGLE_API_KEY'))
 
     result = client.models.embed_content(
             model="gemini-embedding-001",
