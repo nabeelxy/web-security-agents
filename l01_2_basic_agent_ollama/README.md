@@ -1,7 +1,9 @@
 # Using Private LLM Models
 So far we looked at how to use public LLMs that can be accessed via an API. Due to various reasons, you may want to use a private model. In this lesson, we look at two such models gpt-oss:20b and gemma3:4b.
 
-### Installing ollama:
+We use litellm package to load local models from Ollama.
+
+### Installing Ollama:
 ```
 Follow https://ollama.com/download
 ```
