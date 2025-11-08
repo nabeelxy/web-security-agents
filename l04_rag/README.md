@@ -24,3 +24,9 @@ RAG is implemented as an MCP tool (uses studio transport for dev). When the agen
 ```
 adk web
 ```
+
+## Notes
+- gemini-embedding-001 embedding is used to convert text chunks into embeddings in this work. You may change the embedding depending
+  on your application.
+- Overlapping chucking is performed to collected continuous chucks for the context window. You may experiment with other chunking techniques.
+- FAISS is used as an example vector DB; you may use other options including Weaviate, Vertex AI vector DB, Chroma, etc.
