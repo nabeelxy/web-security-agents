@@ -12,6 +12,18 @@ For initial development adk web is an excellent environment as it provides sessi
 ## Getting the API key
 In order to use Google ADK with your personal account, we need an API key. Go to aistudio.google.com and create your key.
 
+Setup Instructions
+1. Google Cloud Setup
+- Create a Google Cloud Project:
+
+- Go to Google Cloud Console
+- Create a new project or select an existing one
+2. Access Google AI Studio:
+
+- Navigate to Google AI Studio
+- Create an API Key (free tier - no credit card needed!)
+
+
 If you are an enterprise user, you may obtain a service key and set the environment variables mentioned below.
 
 ### System:
@@ -34,6 +46,15 @@ For the enterprise account:
 GOOGLE_GENAI_USE_VERTEXAI=1
 GOOGLE_CLOUD_PROJECT=<project-name>
 GOOGLE_CLOUD_LOCATION=<location>
+```
+
+### File Structure
+```
+l01_0_basic_agent_adk/
+├── __init__.py      # Python package marker
+├── agent.py         # Main agent logic
+├── README.md        # Agent documentation
+└── .env             # Environment variables
 ```
 
 ### Run the agent:
