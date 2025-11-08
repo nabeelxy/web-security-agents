@@ -15,13 +15,12 @@ In order to use Google ADK with your personal account, we need an API key. Go to
 Setup Instructions
 1. Google Cloud Setup
 - Create a Google Cloud Project:
-
-- Go to Google Cloud Console
+- Go to [Google Cloud Console](https://console.cloud.google.com/)
 - Create a new project or select an existing one
 2. Access Google AI Studio:
-
-- Navigate to Google AI Studio
+- Navigate to [Google AI Studio](https://aistudio.google.com/)
 - Create an API Key (free tier - no credit card needed!)
+- Note that while it is free, it is only useful testing purposes as it has severe [rate limits](https://cloud.google.com/free/docs/free-cloud-features#free-tier)
 
 
 If you are an enterprise user, you may obtain a service key and set the environment variables mentioned below.
