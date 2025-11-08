@@ -13,3 +13,14 @@ You don't need to run this as it is already saved unless you want to add new thr
 reports folder)
 
 ## RAG Agent
+RAG is implemented as an MCP tool (uses studio transport for dev). When the agent is executed the following steps are followed:
+
+- Create an embedding based on the user query
+- Fetch the top N results from the RAG database
+- Fill in the agent's contexts with the retrieved content
+- Agent finally answers the query based on the data in the context
+
+## Running the agent
+```
+adk web
+```
