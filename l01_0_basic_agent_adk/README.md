@@ -12,9 +12,8 @@ For initial development adk web is an excellent environment as it provides sessi
 ## Getting the API key
 In order to use Google ADK with your personal account, we need an API key. Go to aistudio.google.com and create your key.
 
-Setup Instructions
-1. Google Cloud Setup
-- Create a Google Cloud Project:
+Setup Instructions of Google Cloud:
+1. Create a Google Cloud Project:
 - Go to [Google Cloud Console](https://console.cloud.google.com/)
 - Create a new project or select an existing one
 2. Access Google AI Studio:
