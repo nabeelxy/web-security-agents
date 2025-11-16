@@ -6,3 +6,8 @@ It parallelly fetches information about a domain (whois_agent and cert_agent) an
 
 ## Architecture
 Sequential(Parallel(whois_agent, cert_agent) -> report_agent)
+
+## Running the Agent
+```
+adk web
+```
