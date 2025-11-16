@@ -7,3 +7,8 @@ In order to identify the ASN, first the NS lookup agent is invoked to identify t
 ## Architecture
 
 Sequential(ns_lookup_agent -> asn_agent)
+
+## Running the Agent
+```
+adk web
+```
