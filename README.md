@@ -7,6 +7,7 @@ A hands-on workshop for building LLM-powered agents to automate web security inv
 **Duration:** ~2 hours
 **Target Audience:** Security professionals and developers interested in AI-powered automation
 **Primary Framework:** Google ADK (with LangChain and Ollama alternatives shown)
+**Note:** This repo is originally made for the [eCrime 2025](https://apwg.org/events/ecrime2025) in San Diego in Nov 2025 and extended with additional details.
 
 ### What You'll Build
 
