@@ -91,7 +91,7 @@ Visit http://localhost:8080 and ask the agent a question. If it responds, you're
 
 ## Workshop Structure
 
-The workshop is organized into 6 progressive lessons, each building on the previous:
+The workshop is organized into 7 progressive lessons, each building on the previous:
 
 ### Lesson 1: Basic Agents (30 min)
 
@@ -164,6 +164,16 @@ The workshop is organized into 6 progressive lessons, each building on the previ
 
 **What you'll learn:** How to build a production-ready agent that combines all previous lessons.
 
+### Lesson 7: Agent Evaluations (20 min)
+
+**Concepts:** Evaluation datasets, metrics, quality assurance
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l07_0_agent_evals_basic](l07_0_agent_evals_basic/) | Build eval datasets and measure agent quality | Testing and validation |
+
+**What you'll learn:** How to create evaluation datasets, run automated tests, and measure agent performance.
+
 ## Key Concepts
 
 ### In-Context Learning
@@ -208,6 +218,7 @@ See individual README files in each directory for details.
 5. **Understand L04** - RAG concepts apply beyond this workshop
 6. **Quick review of L05** - See the patterns, don't implement from scratch
 7. **Explore L06** - See how everything comes together
+8. **Practice L07** - Learn to evaluate and validate agent quality
 
 **Time Management:**
 - Don't try to run every example
