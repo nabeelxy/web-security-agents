@@ -291,6 +291,20 @@ Found an issue or want to improve the workshop? Contributions welcome:
 
 This workshop material is provided as-is for educational purposes.
 
+## Citation
+
+If you use SYara in your research or project, please cite:
+
+```bibtex
+@software{ecrime2025agents,
+  title = {How to Build Agentic Systems to Automate Web Security},
+  booktitle = {eCrime 2025},
+  author = {Mohamed Nabeel},
+  year = {2025},
+  url = {https://github.com/nabeelxy/web-security-agents}
+}
+```
+
 ## Acknowledgments
 
 - WHOIS lookup implementation adapted from [dnstwist](https://github.com/elceef/dnstwist)
