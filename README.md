@@ -4,13 +4,13 @@ A hands-on workshop for building LLM-powered agents to automate web security inv
 
 ## Workshop Overview
 
-**Duration:** ~2 hours
+**Duration:** ~2 hours (may take additional time for the new additions like evals and observability)
 
 **Target Audience:** Security professionals and developers interested in AI-powered automation
 
 **Primary Framework:** Google ADK (with LangChain and Ollama alternatives shown)
 
-**Note:** This repo is originally made for the [eCrime 2025](https://apwg.org/events/ecrime2025) in San Diego in Nov 2025 and extended with additional details.
+**Note:** This repo is originally made for the [eCrime 2025](https://apwg.org/events/ecrime2025) in San Diego in Nov 2025 and extended with additional details and lessons.
 
 
 ### What You'll Build
@@ -96,7 +96,7 @@ Visit http://localhost:8080 and ask the agent a question. If it responds, you're
 
 ## Workshop Structure
 
-The workshop is organized into 7 progressive lessons, each building on the previous:
+The workshop is organized into 8 progressive lessons, each building on the previous:
 
 ### Lesson 1: Basic Agents (30 min)
 
@@ -179,6 +179,16 @@ The workshop is organized into 7 progressive lessons, each building on the previ
 
 **What you'll learn:** How to create evaluation datasets, run automated tests, and measure agent performance.
 
+### Lesson 8: Observability and Tracing (15 min)
+
+**Concepts:** Distributed tracing, performance monitoring, debugging
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l08_0_agent_observability](l08_0_agent_observability/) | Trace agent execution and analyze performance | Production monitoring |
+
+**What you'll learn:** How to instrument agents with tracing, identify bottlenecks, and build observability for production.
+
 ## Key Concepts
 
 ### In-Context Learning
@@ -224,6 +234,7 @@ See individual README files in each directory for details.
 6. **Quick review of L05** - See the patterns, don't implement from scratch
 7. **Explore L06** - See how everything comes together
 8. **Practice L07** - Learn to evaluate and validate agent quality
+9. **Study L08** - Understand production observability and monitoring
 
 **Time Management:**
 - Don't try to run every example
@@ -296,7 +307,7 @@ This workshop material is provided as-is for educational purposes.
 If you use SYara in your research or project, please cite:
 
 ```bibtex
-@software{ecrime2025agents,
+@misc{ecrime2025agents,
   title = {How to Build Agentic Systems to Automate Web Security},
   booktitle = {eCrime 2025},
   author = {Mohamed Nabeel},
