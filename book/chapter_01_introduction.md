@@ -115,28 +115,12 @@ Agent:
 
 Every LLM agent follows this fundamental architecture:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         LLM AGENT                            │
-│                                                              │
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐   │
-│  │              │   │              │   │              │   │
-│  │  PERCEPTION  │──▶│  REASONING   │──▶│    ACTION    │   │
-│  │              │   │              │   │              │   │
-│  └──────────────┘   └──────────────┘   └──────────────┘   │
-│         │                   │                   │           │
-└─────────┼───────────────────┼───────────────────┼───────────┘
-          │                   │                   │
-          ▼                   ▼                   ▼
-    User Input          LLM Reasoning        Tool Execution
-    Tool Results        Planning              API Calls
-    Context             Decision Making       External Actions
-```
+<img width="1454" height="550" alt="llm_agent" src="https://github.com/user-attachments/assets/de69b5d6-541a-4a8a-9309-2226cb695cf3" />
 
 **1. Perception**
 - Receives user queries
 - Processes tool outputs
-- Understands context and history
+- Understands context and history - This could be from short or long term memory or RAG solutions
 
 **2. Reasoning**
 - Analyzes the situation
