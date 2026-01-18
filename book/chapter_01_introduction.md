@@ -152,31 +152,30 @@ This entire workflow happens automatically in seconds.
 
 ```python
 # Agent analyzes newly registered domains from NRD feeds
-result = agent.analyze_new_domain("paypa1-secure.com")
+result = agent.analyze_new_domain("netlfix-mp.com")
 
 # Output:
 {
-  "domain": "paypa1-secure.com",
+  "domain": "netlfix-mp.com",
   "verdict": "MALICIOUS",
-  "confidence": 0.96,
+  "confidence": 0.98,
   "threat_type": "Phishing - Brand Impersonation",
   "registration_details": {
-    "registered": "2025-01-15 (3 days ago)",
-    "registrar": "NameCheap",
+    "registered": "2025-01-14 (4 days ago)",
+    "registrar": "Tucows",
     "privacy_protected": true,
-    "registrant_country": "Panama"
+    "registrant_country": "Saint Kitts and Nevis"
   },
   "indicators": [
-    "Typosquatting: mimics 'paypal.com' (numeral '1' replacing letter 'l')",
-    "High-value brand target: PayPal",
+    "Combosquatting: mimics 'netflix.com' (combining -mp)",
+    "High-value brand target: Netflix",
     "Privacy protection + recent registration = suspicious pattern",
-    "Domain contains security-related keyword: 'secure'",
-    "VirusTotal: 12/90 vendors flag as phishing",
-    "URLScan: Fake PayPal login page detected",
+    "VirusTotal: 3/97 vendors flag as phishing",
+    "URLScan: Fake Netflix login page detected",
     "SSL cert issued same day as domain registration",
-    "Threat Intel: Similar domains in active phishing campaign"
+    "Threat Intel: Similar domains in active phishing campaign (PhishTank)"
   ],
-  "recommendation": "Block immediately - active phishing campaign targeting PayPal users",
+  "recommendation": "Block immediately - active phishing campaign targeting Netflix users",
   "priority": "CRITICAL"
 }
 ```
