@@ -147,7 +147,7 @@ This entire workflow happens automatically in seconds.
 
 ### 1. Newly Registered Domain (NRD) Analysis
 
-**Traditional:** Manually review hundreds of new domains daily
+**Traditional:** Manually review hundreds of new domains daily  
 **With Agent:** Automated bulk analysis with pattern detection
 
 ```python
