@@ -136,58 +136,8 @@ Every LLM agent follows this fundamental architecture:
 
 ### A Concrete Example: Domain Analysis
 
-Let's trace how an agent analyzes a suspicious domain:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ PERCEPTION                                                   │
-│ Input: "Analyze paypa1-secure.com"                          │
-│ Context: User is a security analyst                         │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ REASONING                                                    │
-│ - Domain looks like typosquatting (paypa1 vs paypal)       │
-│ - Need to verify: WHOIS, VirusTotal, reputation            │
-│ - Plan: 1) Check WHOIS  2) Scan VirusTotal  3) Assess      │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ ACTION 1: WHOIS Lookup                                       │
-│ Result: Registered 2 days ago, privacy-protected           │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ REASONING                                                    │
-│ - New domain + privacy protection = suspicious             │
-│ - Continue investigation                                    │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ ACTION 2: VirusTotal Scan                                    │
-│ Result: 12/90 vendors flag as phishing                     │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ REASONING                                                    │
-│ - Typosquatting pattern confirmed                          │
-│ - Recent registration                                       │
-│ - Multiple vendors flag as phishing                         │
-│ - High confidence: This is malicious                        │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ FINAL RESPONSE                                               │
-│ VERDICT: MALICIOUS (Confidence: 0.92)                       │
-│                                                              │
-│ EVIDENCE:                                                    │
-│ - Typosquatting 'paypal.com' → 'paypa1-secure.com'        │
-│ - Domain age: 2 days                                        │
-│ - VirusTotal: 12/90 vendors flag as phishing              │
-│                                                              │
-│ RECOMMENDATION: Block immediately                            │
-└─────────────────────────────────────────────────────────────┘
-```
+Let's trace how an agent analyzes a malicious domain:
+<img width="1316" height="839" alt="agent_trace" src="https://github.com/user-attachments/assets/297a313a-a25f-4218-ab84-e85ee76c5bdc" />
 
 This entire workflow happens automatically in seconds.
 
