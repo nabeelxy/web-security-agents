@@ -369,7 +369,7 @@ Before we begin, ensure you have:
    pip --version
    ```
 
-3. **Google Cloud Account** (free tier works fine)
+3. **Google Cloud Account** (free tier works fine with the $300 credit provided by GCP at the time of writing)
    - Sign up at: https://cloud.google.com
 
 4. **Google AI API Key**
