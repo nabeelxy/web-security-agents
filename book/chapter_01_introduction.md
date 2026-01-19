@@ -448,10 +448,10 @@ python test_setup.py
 
 Expected output:
 ```
-Hello! How can I help you today?
+Hello!
 ```
 
-If you see this, you're ready to build agents! ✅
+If you see this, you're ready to build agents! 
 
 ### Development Tools (Optional but Recommended)
 
@@ -469,55 +469,53 @@ pip install pylint         # Code linting
 
 ---
 
-## Your First Security Agent in 10 Lines
+## Your First Security Agent in less than 10 Lines
 
 Let's build a simple security Q&A agent to understand the basics.
 
 ### The Code
-
-Create `first_agent.py`:
+Create a folder first_agent  
+cd first_agent. 
+Create .env with the following env variables:  
+```
+GOOGLE_GENAI_USE_VERTEXAI=0
+GOOGLE_API_KEY=<your_api_key_here>
+```
+Create `agent.py`:
 
 ```python
 from google.adk.agents import LlmAgent
 
 # Create agent with security expertise
-agent = LlmAgent(
+root_agent = LlmAgent(
     name="security_advisor",
-    model="gemini-2.0-flash-exp",
+    model="gemini-2.5-flash",
     instruction="""You are an expert cybersecurity advisor.
     Provide clear, accurate security guidance."""
 )
-
-# Ask a security question
-result = agent.run("What is a SQL injection attack?")
-print(result.get("result"))
 ```
 
 ### Running Your First Agent
 
 ```bash
-python first_agent.py
+cd .. # Go to the parent folder
+adk web
 ```
 
-**Output:**
+This should start the adk web server and you should see something similar to the following:
+
 ```
-A SQL injection attack is a code injection technique where attackers
-insert malicious SQL statements into application input fields. This
-exploits vulnerabilities in the application's database layer.
-
-Example:
-- Normal query: SELECT * FROM users WHERE username='admin'
-- Attack: username = 'admin' OR '1'='1
-- Result: SELECT * FROM users WHERE username='admin' OR '1'='1'
-
-This bypasses authentication because '1'='1' is always true.
-
-Prevention:
-1. Use parameterized queries/prepared statements
-2. Input validation and sanitization
-3. Principle of least privilege for database accounts
-4. Web application firewalls
++-----------------------------------------------------------------------------+
+| ADK Web Server started                                                      |
+|                                                                             |
+| For local testing, access at http://127.0.0.1:8000.                         |
++-----------------------------------------------------------------------------+
 ```
+
+Go to your favovrite browser and access the above URL. Let's ask what prompt
+injection is. 
+
+You should see a reply similar to the following:  
 
 ### Understanding the Code
 
