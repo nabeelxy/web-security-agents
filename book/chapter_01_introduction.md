@@ -347,27 +347,8 @@ Building agents from scratch is complex. You need:
 
 ### ADK Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      YOUR AGENT APP                          │
-│                                                              │
-│  ┌────────────────────────────────────────────────────┐    │
-│  │             Google ADK                               │    │
-│  │                                                      │    │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌───────────┐  │    │
-│  │  │   Agent     │  │   Planner   │  │   Tools   │  │    │
-│  │  │   Runtime   │  │   (ReAct)   │  │   (MCP)   │  │    │
-│  │  └─────────────┘  └─────────────┘  └───────────┘  │    │
-│  │         │                 │               │         │    │
-│  └─────────┼─────────────────┼───────────────┼─────────┘    │
-│            │                 │               │               │
-│            ▼                 ▼               ▼               │
-│     ┌─────────────┐   ┌─────────────┐  ┌──────────────┐   │
-│     │   Gemini    │   │  Planning   │  │ Custom Tools │   │
-│     │    API      │   │   Engine    │  │   & APIs     │   │
-│     └─────────────┘   └─────────────┘  └──────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
+<img width="1086" height="584" alt="adk_architecture" src="https://github.com/user-attachments/assets/a08eea25-0590-4a3b-8186-2351ed809eb7" />
+
 
 ---
 
@@ -516,6 +497,8 @@ Go to your favovrite browser and access the above URL. Let's ask what prompt
 injection is. 
 
 You should see a reply similar to the following:  
+<img width="1359" height="636" alt="adk_web_example1" src="https://github.com/user-attachments/assets/8f6e63a1-79ff-49e0-a19f-4aedbfdfa89a" />
+
 
 ### Understanding the Code
 
@@ -527,81 +510,17 @@ from google.adk.agents import LlmAgent
 - Imports the agent class from Google ADK
 
 ```python
-agent = LlmAgent(
+root_agent = LlmAgent(
     name="security_advisor",
-    model="gemini-2.0-flash-exp",
+    model="gemini-2.5-flashp",
     instruction="You are an expert cybersecurity advisor..."
 )
 ```
-- **name**: Identifier for your agent
+- **name**: Identifier for your agent (we use the name root_agent to comply with adk web discovery logic. You may also create root_agent.yaml file instead if you want to use a different name and specify in this yaml file.
 - **model**: Which Gemini model to use
-  - `gemini-2.0-flash-exp` - Fast, cost-effective (recommended for most use cases)
-  - `gemini-2.0-pro-exp` - Most capable, slower, more expensive
+  - `gemini-2.5-flash` - Fast, cost-effective (recommended if you are on a tight budget)
+  - `gemini-3.0-flash` - Most capable, but more expensive
 - **instruction**: System prompt defining agent behavior and expertise
-
-```python
-result = agent.run("What is a SQL injection attack?")
-```
-- Sends query to agent
-- Agent processes with LLM
-- Returns result
-
-```python
-print(result.get("result"))
-```
-- Extracts and displays the response
-
-### Making It Interactive
-
-Let's upgrade to a conversational agent:
-
-```python
-from google.adk.agents import LlmAgent
-
-agent = LlmAgent(
-    name="security_advisor",
-    model="gemini-2.0-flash-exp",
-    instruction="""You are an expert cybersecurity advisor.
-    Provide clear, concise security guidance.
-    If unsure, acknowledge limitations."""
-)
-
-print("Security Advisor - Type 'quit' to exit")
-print("-" * 50)
-
-while True:
-    question = input("\nYour question: ")
-
-    if question.lower() == 'quit':
-        break
-
-    result = agent.run(question)
-    print(f"\nAdvisor: {result.get('result')}")
-```
-
-**Example session:**
-```
-Security Advisor - Type 'quit' to exit
---------------------------------------------------
-
-Your question: What is phishing?
-
-Advisor: Phishing is a social engineering attack where attackers
-impersonate legitimate entities to trick victims into revealing
-sensitive information like passwords or credit card numbers.
-
-Your question: How can I protect against it?
-
-Advisor: Key protections:
-1. Verify sender email addresses carefully
-2. Never click suspicious links - hover to check URLs
-3. Enable multi-factor authentication
-4. Use email filtering and anti-phishing tools
-5. Train users to recognize phishing attempts
-6. Report suspicious emails to your security team
-
-Your question: quit
-```
 
 ---
 
