@@ -525,7 +525,7 @@ root_agent = LlmAgent(
 - **name**: Identifier for your agent (we use the name root_agent to comply with adk web discovery logic. You may also create root_agent.yaml file instead if you want to use a different name and specify in this yaml file.
 - **model**: Which Gemini model to use
   - `gemini-2.5-flash` - Fast, cost-effective (recommended if you are on a tight budget)
-  - `gemini-3.0-flash` - Most capable, but more expensive
+  - `gemini-3.0-pro-preview` - Most capable at the time of writing, but more expensive. Check out [Google's model page](https://ai.google.dev/gemini-api/docs/models) for more information and latest updates.
 - **instruction**: System prompt defining agent behavior and expertise
 
 ---
