@@ -381,6 +381,12 @@ Before we begin, ensure you have:
 
 **Step 1: Install Google ADK**
 
+Recommened to create a virtual environment first:
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+Then install the necessary libraries in the virtual environment:
 ```bash
 pip install google-adk google-genai
 ```
