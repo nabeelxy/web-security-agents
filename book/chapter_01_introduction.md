@@ -180,77 +180,7 @@ result = agent.analyze_new_domain("netlfix-mp.com")
 }
 ```
 
-### 2. Certificate Transparency Log Monitoring
-
-**Traditional:** Manual review of CT logs for suspicious certificates
-**With Agent:** Real-time suspicious certificate detection
-
-```python
-# Agent monitors Certificate Transparency logs
-ct_analysis = agent.analyze_ct_log_entry({
-    "domain": "accounts-verify-amazon.com",
-    "cert_issuer": "Let's Encrypt",
-    "issue_date": "2025-01-18",
-    "san_entries": ["www.accounts-verify-amazon.com", "login.accounts-verify-amazon.com"]
-})
-
-# Output:
-{
-  "domain": "accounts-verify-amazon.com",
-  "verdict": "SUSPICIOUS",
-  "confidence": 0.92,
-  "threat_type": "Likely Phishing Infrastructure",
-  "certificate_analysis": {
-    "issuer": "Let's Encrypt",
-    "issued": "2025-01-18 (today)",
-    "validity": "90 days",
-    "san_entries": 2,
-    "suspicious_sans": ["login.accounts-verify-amazon.com"]
-  },
-  "indicators": [
-    "Typosquatting: mimics 'amazon.com' with prepended keywords",
-    "Subdomain mimics login page: 'login.accounts-verify-amazon.com'",
-    "Domain registered same day as certificate issuance",
-    "Pattern matches known phishing campaigns",
-    "WHOIS: Privacy-protected, registered via Namecheap",
-    "No VirusTotal history yet (too new)",
-    "Site not yet live (DNS configured but no content)"
-  ],
-  "recommendation": "Pre-emptively block - phishing infrastructure being prepared",
-  "urgency": "Monitor closely - site may go live within hours",
-  "follow_up": "Check URLScan in 24-48 hours when site becomes active"
-}
-```
-
-### 3. Suspicious Domain Analysis (General)
-
-**Traditional:** Manual investigation across multiple tools
-**With Agent:** Automated multi-source verification
-
-```python
-# Agent analyzes suspicious domains from various feeds
-result = agent.analyze_domain("evil-malware-site.xyz")
-
-# Output:
-{
-  "domain": "evil-malware-site.xyz",
-  "verdict": "MALICIOUS",
-  "confidence": 0.98,
-  "threat_type": "Malware Distribution",
-  "indicators": [
-    "High-risk TLD: .xyz (common in malicious campaigns)",
-    "Domain age: 7 days",
-    "WHOIS: Privacy-protected, registered in Russia",
-    "VirusTotal: 45/90 vendors flag as malicious",
-    "URLScan: Hosts malware download links",
-    "Threat Intel: Listed in 3 blacklist feeds",
-    "DNS: Multiple A records (fast-flux pattern)"
-  ],
-  "recommendation": "Block immediately - active malware distribution site"
-}
-```
-
-### 4. Phishing Email Analysis
+### 2. Phishing Email Analysis
 
 **Traditional:** Manual examination of email headers, links, and content
 **With Agent:** Comprehensive automated analysis
@@ -265,9 +195,9 @@ verdict = agent.analyze_phishing_email(email_content)
   "confidence": 0.96,
   "phishing_type": "Credential Harvesting",
   "indicators": [
-    "Sender spoofing: Display 'PayPal' but from paypa1.com",
+    "Sender spoofing: Display 'PayPal' but from paypal-verify.com",
     "Urgency tactics: 'Verify account within 24h or suspension'",
-    "Suspicious links: 3 links to paypa1-secure.com/verify",
+    "Suspicious links: 3 links to paypal-verify.com/verify",
     "HTML mimics legitimate PayPal styling",
     "Embedded form requests username/password",
     "SSL cert mismatch on landing page"
@@ -277,7 +207,7 @@ verdict = agent.analyze_phishing_email(email_content)
 }
 ```
 
-### 5. Third-Party Threat Report Validation
+### 3. Third-Party Threat Report Validation
 
 **Traditional:** Read blog posts and manually verify claims
 **With Agent:** Automated validation with source correlation
@@ -312,7 +242,7 @@ validation = agent.validate_threat_report(
 }
 ```
 
-### 6. False Positive Investigation
+### 4. False Positive Investigation
 
 **Traditional:** Manual review of customer complaints about blocked sites
 **With Agent:** Rapid investigation with evidence collection
@@ -345,7 +275,7 @@ investigation = agent.investigate_false_positive(
 }
 ```
 
-### 7. False Negative Verification
+### 5. False Negative Verification
 
 **Traditional:** Manually investigate customer reports of missed threats
 **With Agent:** Rapid threat validation and gap analysis
@@ -353,7 +283,7 @@ investigation = agent.investigate_false_positive(
 ```python
 # Agent verifies customer-reported false negatives
 verification = agent.verify_false_negative(
-    domain="malicious-site.net",
+    domain="bank-fake.net",
     customer_complaint="This phishing site wasn't blocked - I almost got scammed!",
     current_classification="SAFE"
 )
@@ -500,11 +430,12 @@ Create a test file `test_setup.py`:
 
 ```python
 from google import genai
+import os
 
 # Test API connection
-client = genai.Client(api_key="your_api_key_here")
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 response = client.models.generate_content(
-    model='gemini-2.0-flash-exp',
+    model='gemini-2.5-flash',
     contents='Say hello!'
 )
 print(response.text)
