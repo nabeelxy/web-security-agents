@@ -4,7 +4,7 @@ A hands-on workshop for building LLM-powered agents to automate web security inv
 
 ## Workshop Overview
 
-**Duration:** ~2 hours (may take additional time for the new additions like evals and observability)
+**Duration:** ~8-9 hours total (L01-L09: ~2 hours, L10-L21: ~6-7 hours)
 
 **Target Audience:** Security professionals and developers interested in AI-powered automation
 
@@ -96,7 +96,7 @@ Visit http://localhost:8080 and ask the agent a question. If it responds, you're
 
 ## Workshop Structure
 
-The workshop is organized into 8 progressive lessons, each building on the previous:
+The workshop is organized into 21 progressive lessons, each building on the previous:
 
 ### Lesson 1: Basic Agents (30 min)
 
@@ -110,6 +110,8 @@ The workshop is organized into 8 progressive lessons, each building on the previ
 | [l01_3_basic_agent_no_web](l01_3_basic_agent_no_web/) | Programmatic usage | API integration |
 
 **What you'll learn:** How to create basic agents, choose frameworks, and deploy in different modes.
+
+**💡 Recommended:** After completing L01, jump to [Lesson 9: Prompt Engineering](l09_prompt_engineering/) to learn how to craft effective prompts. This foundational skill will improve all subsequent lessons.
 
 ### Lesson 2: Tool Calling (20 min)
 
@@ -189,6 +191,138 @@ The workshop is organized into 8 progressive lessons, each building on the previ
 
 **What you'll learn:** How to instrument agents with tracing, identify bottlenecks, and build observability for production.
 
+### Lesson 9: Prompt Engineering (20 min)
+
+**Concepts:** System prompts, few-shot learning, chain-of-thought, structured output
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l09_prompt_engineering](l09_prompt_engineering/) | Craft effective prompts through examples and iteration | Prompt optimization |
+
+**What you'll learn:** How to write system prompts, use few-shot examples, apply chain-of-thought reasoning, create templates, and debug poor outputs.
+
+**⭐ Foundation Lesson:** This lesson is best taken right after L01 as good prompting is critical for all agent development.
+
+### Lesson 10: Safety & Content Filtering (25 min)
+
+**Concepts:** Defense-in-depth, prompt injection detection, input validation, output filtering
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l10_safety_filtering](l10_safety_filtering/) | 5-layer security architecture | Input validation, injection detection, rate limiting |
+
+**What you'll learn:** How to protect agents from prompt injection attacks, validate inputs, filter outputs, and implement rate limiting.
+
+### Lesson 11: Error Handling & Resilience (25 min)
+
+**Concepts:** Retry logic, circuit breakers, fallback strategies
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l11_error_handling](l11_error_handling/) | Resilient agent with error recovery | Exponential backoff, graceful degradation |
+
+**What you'll learn:** How to handle API failures, implement retry logic with exponential backoff, use circuit breakers, and design multi-tier fallback strategies.
+
+### Lesson 12: Cost Optimization & Caching (30 min)
+
+**Concepts:** Exact caching, semantic caching, cost tracking
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l12_cost_optimization](l12_cost_optimization/) | Reduce costs by 80%+ with caching | Multi-tier caching, cost monitoring |
+
+**What you'll learn:** How to implement exact and semantic caching, track token usage and costs, and optimize LLM API spend.
+
+### Lesson 13: Human-in-the-Loop (30 min)
+
+**Concepts:** Confidence scoring, approval workflows, audit trails
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l13_human_in_the_loop](l13_human_in_the_loop/) | Balance automation with human oversight | Review queues, confidence thresholds |
+
+**What you'll learn:** How to calculate confidence scores, route low-confidence decisions to humans, manage review queues, and create audit trails.
+
+### Lesson 14: Streaming & Async (25 min)
+
+**Concepts:** Streaming responses, Server-Sent Events, parallel execution
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l14_streaming](l14_streaming/) | Progressive disclosure and async operations | SSE, AsyncIterator, parallelization |
+
+**What you'll learn:** How to stream agent responses for better UX, implement Server-Sent Events, and parallelize tool execution for 2-3x speedup.
+
+### Lesson 15: Memory & State Management (20 min)
+
+**Concepts:** Conversation memory, context window management, summarization
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l15_memory](l15_memory/) | Multi-turn conversations with memory | Message history, context limits |
+
+**What you'll learn:** How to maintain conversation context, manage token limits, and implement automatic summarization.
+
+### Lesson 16: Production Deployment (35 min)
+
+**Concepts:** Docker, Kubernetes, health checks, scalability
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l16_production](l16_production/) | Deploy to production with Docker & Kubernetes | Containerization, orchestration, monitoring |
+
+**What you'll learn:** How to containerize agents with Docker, orchestrate services with docker-compose, deploy to Kubernetes, and implement production best practices.
+
+### Lesson 17: Advanced RAG (40 min)
+
+**Concepts:** Advanced chunking, hybrid search, vector databases, retrieval optimization
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l17_advanced_rag](l17_advanced_rag/) | 2-3x better RAG with advanced techniques | Recursive chunking, MMR, reranking, HyDE |
+
+**What you'll learn:** How to improve RAG quality with advanced chunking strategies (recursive, semantic, parent-child), hybrid search (dense + sparse), cross-encoder reranking, MMR for diversity, and production vector database choices (FAISS, Chroma, Qdrant, Pinecone).
+
+### Lesson 18: Vision & Multimodal Agents (35 min)
+
+**Concepts:** Gemini Vision API, multimodal reasoning, image analysis, visual security threats
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l18_vision_multimodal](l18_vision_multimodal/) | Analyze screenshots, detect phishing, extract IOCs from images | Vision capabilities, cross-modal validation |
+
+**What you'll learn:** How to use Gemini Vision for analyzing security screenshots, detecting phishing from images, extracting IOCs with OCR, analyzing malware UIs, interpreting threat intel charts, and combining text + images for cross-modal validation.
+
+### Lesson 19: Agent Routing & Conditional Logic (30 min)
+
+**Concepts:** Intent classification, specialized agents, load balancing, conditional routing
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l19_agent_routing](l19_agent_routing/) | Route queries to specialized agents for 40-60% better accuracy | LLM/rule-based classification, routing strategies |
+
+**What you'll learn:** How to classify user intents (LLM-based, rule-based, hybrid), route queries to specialized agents, implement load balancing, multi-agent consultation, and context-aware routing for optimal results.
+
+### Lesson 20: Testing & Quality Assurance (40 min)
+
+**Concepts:** Test frameworks, synthetic data, evaluation metrics, A/B testing, edge cases
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l20_testing_qa](l20_testing_qa/) | Comprehensive testing for production-ready agents | Unit/workflow tests, metrics, regression testing |
+
+**What you'll learn:** How to build test frameworks for agents, generate synthetic test data with LLMs, measure performance with evaluation metrics (accuracy, precision, recall, F1), A/B test agent versions, test edge cases, and implement regression testing.
+
+### Lesson 21: Advanced Web Security Agent (30 min)
+
+**Concepts:** Production-ready agent, security hardening, reliability, cost optimization
+
+| Example | Description | Key Learning |
+|---------|-------------|--------------|
+| [l21_advanced_web_sec_agent](l21_advanced_web_sec_agent/) | L06 enhanced with L10-L13 production features | Security, resilience, caching, human review, observability |
+
+**What you'll learn:** How to transform L06's basic agent into a production-ready system by adding input validation (L10), error handling (L11), caching (L12), human-in-the-loop (L13), and observability (L08). Focus on security-first design and robust, reliable web security analysis.
+
 ## Key Concepts
 
 ### In-Context Learning
@@ -226,20 +360,43 @@ See individual README files in each directory for details.
 
 **Recommended Path:**
 
+**Part 1: Core Agent Development (L01-L09)**
 1. **Start with L01.0** - Get the basic agent working to validate your setup
-2. **Skim L01.1-L01.3** - Understand alternatives but don't spend too much time
-3. **Focus on L02.1** - Custom tool creation is critical
-4. **Deep dive into L03** - MCP is the key architectural pattern
-5. **Understand L04** - RAG concepts apply beyond this workshop
-6. **Quick review of L05** - See the patterns, don't implement from scratch
-7. **Explore L06** - See how everything comes together
-8. **Practice L07** - Learn to evaluate and validate agent quality
-9. **Study L08** - Understand production observability and monitoring
+2. **⭐ Jump to L09** - Learn prompt engineering (foundational skill for everything else)
+3. **Skim L01.1-L01.3** - Understand alternatives but don't spend too much time
+4. **Focus on L02.1** - Custom tool creation is critical
+5. **Deep dive into L03** - MCP is the key architectural pattern
+6. **Understand L04** - RAG concepts apply beyond this workshop
+7. **Quick review of L05** - See the patterns, don't implement from scratch
+8. **Explore L06** - See how everything comes together
+9. **Practice L07** - Learn to evaluate and validate agent quality
+10. **Study L08** - Understand production observability and monitoring
+
+**Part 2: Production-Ready Features (L10-L21)**
+11. **Security first: L10** - Protect against prompt injection and attacks
+12. **Build resilience: L11** - Handle failures gracefully with retry logic
+13. **Optimize costs: L12** - Implement caching to reduce LLM API costs by 80%+
+14. **Add oversight: L13** - Balance automation with human review
+15. **Improve UX: L14** - Stream responses and parallelize operations
+16. **Maintain context: L15** - Handle multi-turn conversations
+17. **Deploy to prod: L16** - Containerize and deploy with Docker/Kubernetes
+18. **Advanced RAG: L17** - Improve RAG quality 2-3x with advanced techniques
+19. **Add vision: L18** - Analyze screenshots and images for visual threats
+20. **Implement routing: L19** - Route queries to specialized agents for better results
+21. **Test thoroughly: L20** - Build comprehensive test suites for production confidence
+22. **⭐ L21: Production Agent** - See L06 enhanced with L10-L13 security and reliability features
 
 **Time Management:**
-- Don't try to run every example
-- Focus on understanding patterns over syntax
-- Use the capstone (L06) as your reference for "how it all fits together"
+- L01-L09 can be completed in ~2 hours for core concepts
+- L10-L21 adds ~6-7 hours for production readiness
+- Don't try to run every example - understand patterns over syntax
+- Use L06 as your reference for "how it all fits together"
+- Use L16 to see how to deploy everything to production
+- Use L17 to optimize RAG quality after building basic RAG in L04
+- Use L18 for multimodal security analysis with vision
+- Use L19 for intelligent query routing to specialized agents
+- Use L20 to build comprehensive test coverage before deployment
+- **Use L21 to see L06 transformed into a production-ready secure agent**
 
 ## Troubleshooting
 
@@ -268,17 +425,50 @@ See individual README files in each directory for details.
 
 ## Production Considerations
 
-This workshop demonstrates core concepts with working code. For production deployment:
+This workshop demonstrates core concepts with working code. **Lessons 10-16 specifically address production readiness:**
 
-- Implement proper error handling and retry logic
-- Add rate limiting and request throttling
-- Use async/await for I/O-bound operations
-- Implement proper logging and monitoring
-- Secure API keys using secret management services
-- Add input validation and sanitization
-- Consider costs of LLM API calls and optimize prompts
-- Implement caching strategies for expensive operations
-- Test thoroughly with adversarial inputs
+**Security & Safety (L10):**
+- Input validation and sanitization
+- Prompt injection detection (OWASP #1 LLM vulnerability)
+- Output filtering for PII and harmful content
+- Rate limiting and abuse prevention
+
+**Reliability & Resilience (L11):**
+- Error handling with retry logic and exponential backoff
+- Circuit breakers for external services
+- Multi-tier fallback strategies
+- Graceful degradation
+
+**Cost Optimization (L12):**
+- Exact and semantic caching (80%+ cost reduction)
+- Token usage tracking and monitoring
+- Multi-tier caching strategies
+- Cost per request metrics
+
+**Quality & Oversight (L13):**
+- Confidence scoring for automated decisions
+- Human-in-the-loop review workflows
+- Audit trails for compliance
+- Continuous learning from human feedback
+
+**Performance & UX (L14):**
+- Streaming responses for progressive disclosure
+- Parallel tool execution (2-3x speedup)
+- Server-Sent Events (SSE) for web clients
+- Async/await patterns
+
+**State Management (L15):**
+- Conversation memory and context management
+- Token limit handling
+- Automatic summarization
+
+**Deployment (L16):**
+- Docker containerization
+- Kubernetes orchestration
+- Health checks and monitoring
+- Secrets management
+- Zero-downtime deployments
+- Auto-scaling
 
 ## Additional Resources
 
@@ -304,7 +494,7 @@ This workshop material is provided as-is for educational purposes.
 
 ## Citation
 
-If you use SYara in your research or project, please cite:
+If you use any lessons from this in your research or project, please cite:
 
 ```bibtex
 @misc{ecrime2025agents,

@@ -38,7 +38,7 @@ def cert_tool(domain: str) -> dict:
 # define whois agent
 whois_agent = LlmAgent(
     name = "whois_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction= """You are an agent that can fetch WHOIS record
     for a given domain and parse and come up a report. You may
     use whois_tool to fetch whois records. 
@@ -50,7 +50,7 @@ whois_agent = LlmAgent(
 # cert agent 
 cert_agent = LlmAgent(
     name = "cert_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction= """You are an agent that can fetch SSL/TLS certificate
     information for a given domain and analyze its validity and security attributes,
     and come up with a succint report. You may use cert_tool to fetch 
@@ -70,7 +70,7 @@ parallel_agent = ParallelAgent(
 # aggregate the results
 report_agent = LlmAgent(
     name = "report_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction=""" You are an agent which would help in combining 
     gather information from multiple agents. You may use the google_search
     tool to validate and enrich the domain intelligence report.

@@ -16,7 +16,7 @@ toolset_vt = MCPToolset(
 
 root_agent = LlmAgent(
     name="agent_03_vt_mcp",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="""
         Web security analyst. 
         """,

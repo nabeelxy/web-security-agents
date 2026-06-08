@@ -37,7 +37,7 @@ async def run_agent_with_prompt(system_prompt: str, user_prompt: str, session_id
     # Create agent with given system prompt
     agent = LlmAgent(
         name="prompt_test_agent",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description="Security domain analyst",
         instruction=system_prompt
     )

@@ -3,7 +3,7 @@ from google.adk.tools import google_search
 
 root_agent = LlmAgent(
     name="agent_02_adk_tool",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="""
         Web security analyst. 
         """,

@@ -22,7 +22,7 @@ async def test_prompt(prompt: str, iteration_number: int, domain: str):
     """Test a prompt and return the response."""
     agent = LlmAgent(
         name="test_agent",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description="Security analyst",
         instruction=prompt
     )

@@ -1,7 +1,7 @@
 from langchain.agents import create_agent
 
 agent = create_agent(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     system_prompt="You are an expert web security analysis agent.",
 )
 

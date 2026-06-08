@@ -22,7 +22,7 @@ def create_security_agent():
 
     agent = LlmAgent(
         name="security_assessor",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description="Web security expert for domain safety assessment.",
         instruction="""You are a web security expert assistant. Your job is to help users
 understand whether domains and websites are safe.

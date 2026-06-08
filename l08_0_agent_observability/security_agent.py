@@ -21,7 +21,7 @@ def create_instrumented_agent():
     """
     agent = LlmAgent(
         name="security_agent_traced",
-        model="gemini-2.0-flash",
+        model="gemini-2.5-flash",
         description="Web security expert with search capabilities.",
         instruction="""You are a web security expert assistant. Your job is to help users
 understand security threats, vulnerabilities, and best practices.

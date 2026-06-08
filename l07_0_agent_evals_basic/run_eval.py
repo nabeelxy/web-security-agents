@@ -220,7 +220,7 @@ async def run_evaluation_async(dataset_path="eval_dataset.json", output_path="ev
             "timestamp": datetime.now().isoformat(),
             "dataset": dataset_path,
             "total_cases": total,
-            "model": "gemini-2.0-flash"
+            "model": "gemini-2.5-flash"
         },
         "summary": {
             "total_tests": total,

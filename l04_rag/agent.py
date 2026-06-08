@@ -38,7 +38,7 @@ def retrieval_augmented_generation(query: str, top_k: int =5):
 
 root_agent = LlmAgent(
     name="agent_01_rag",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="""
         Web security analyst. 
         """,

@@ -19,7 +19,7 @@ def get_domain_whois(domain: str):
         return {"error": "Unable to get WHOIS record"}
 
 agent = create_agent(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     tools=[get_domain_whois],
     system_prompt="""
         You are an expert web security analysis agent.

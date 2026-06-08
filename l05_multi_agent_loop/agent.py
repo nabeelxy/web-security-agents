@@ -4,7 +4,7 @@ from google.adk.tools import google_search
 # define basic domain agent
 basic_domain_agent = LlmAgent(
     name = "basic_domain_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction= """
         You are an agent that searches a given domain name using the
         google_search tool and find top entries and summerize them.
@@ -16,7 +16,7 @@ basic_domain_agent = LlmAgent(
 
 advanced_domain_agent = LlmAgent(
     name = "advanced_domain_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction= """ Your are an advanced domain analysis agent that
     takes the initial search results and performs a comprehensive analysis
     and annotate the findings with additional resources and/or verify
@@ -33,7 +33,7 @@ advanced_domain_agent = LlmAgent(
 
 report_agent = LlmAgent(
     name = "report_agent",  
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction= """ You are an agent responsible for generating a comprehensive
     report based on domain intelligence gathered from previous analysis stages.
     
